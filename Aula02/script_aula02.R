@@ -1,6 +1,6 @@
 ######################################################
 # Introdu√ß√£o Linguagem R
-# Vitor Passos Rios
+# Vitor Passos Rios (bruxao)
 # Universidade Federal da Bahia
 # https://github.com/vrios/Intro-Linguagem-R/wiki
 #####################################################
@@ -9,24 +9,24 @@
 
 #####Trabalhando com dados#####
 # o que √© um dataframe? Qual a diferne√ßa entre um dataframe e um list?
-#uma lista È um objeto composto por vetores que podem ter tamanhos e classes diferentes, um data frame È um tipo especial de list onde os vetores possuem o mesmo tamanho, mas podem ter classes diferentes 
+#uma lista ? um objeto composto por vetores que podem ter tamanhos e classes diferentes, um data frame ? um tipo especial de list onde os vetores possuem o mesmo tamanho, mas podem ter classes diferentes 
 
 # o que as fun√ß√µes abaixo fazem? O que elas retornam?
-is.vector(aves.c$urubu) #confirma que a linha urubu dentro do arquivo aves.c È um vetor
-is.numeric(aves.c$urubu) #confirma que a linha urubu dentro do arquivo aves.c È numÈrico
-is.character(aves.c$urubu) #diz que a linha urubu dentro do arquivo aves.c n„o È um car·ter
-is.matrix(peso) #n„o existe matriz "peso" feita 
-is.na(aves.c$urubu) #mostra onde est· todos os NA na linha urubu
-is.data.frame(aves.c$urubu) #mostra falso, pois a linha urubu no arquivo aves.c n„o È uma lista de vetores
+is.vector(aves.c$urubu) #confirma que a linha urubu dentro do arquivo aves.c ? um vetor
+is.numeric(aves.c$urubu) #confirma que a linha urubu dentro do arquivo aves.c ? num?rico
+is.character(aves.c$urubu) #diz que a linha urubu dentro do arquivo aves.c n?o ? um car?ter
+is.matrix(peso) #n?o existe matriz "peso" feita 
+is.na(aves.c$urubu) #mostra onde est? todos os NA na linha urubu
+is.data.frame(aves.c$urubu) #mostra falso, pois a linha urubu no arquivo aves.c n?o ? uma lista de vetores
             
 
 
 
-#o que queremos dizer quando dizemos uma fun√ß√£o "retorna" alguma coisa? #dizemos que ela mostra o resultado da funÁ„o que foi executada
-#voÍ pode colocar seu resultado dentro de um objeto. o seu resultado pode ser um gr·fico que vc pode colocar num objeto pra usar depois 
+#o que queremos dizer quando dizemos uma fun√ß√£o "retorna" alguma coisa? #dizemos que ela mostra o resultado da fun??o que foi executada
+#vo? pode colocar seu resultado dentro de um objeto. o seu resultado pode ser um gr?fico que vc pode colocar num objeto pra usar depois 
 # is.data.frame(caixeta)
 #retornado = is.data.frame(caixeta)
-#o que a fun√ß√£o summary() faz? #mostra um sum·rio estatÌstico do que eu selecionei que ele calcule 
+#o que a fun√ß√£o summary() faz? #mostra um sum?rio estat?stico do que eu selecionei que ele calcule 
 summary(aves.c$urubu)
 
 #Tr√™s √°reas foram submetidas aplica√ß√£o de tr√™s adubos diferentes, e uma foi
@@ -70,11 +70,11 @@ unique(caixeta$especie)
 sort(unique(caixeta$especie))
 caixeta$especie[caixeta$especie == "Callophyllum brasiliensis"] = "Calophyllum brasiliensis"
 sort(unique(caixeta$especie))
-#existem 42 espÈcies diferentes
+#existem 42 esp?cies diferentes
 
 # o arquivo deve estar no seu diret√≥rio de trabalho
 str(caixeta) #o que este comando faz? mostra a estrutura interna de um objeto
-summary(caixeta) #mostra o resumo estatÌstico dos meus dados. sÛ que faz os c·lculos de tudo junto, n„o serve. terei que indexar a vari·vel que eu quero
+summary(caixeta) #mostra o resumo estat?stico dos meus dados. s? que faz os c?lculos de tudo junto, n?o serve. terei que indexar a vari?vel que eu quero
 
 #podemos criar uma coluna a mais no nosso dataframe apenas dizendo ao R o que
 #colocar l√°. Por exemplo, criamos uma coluna com o nome do coletor do dado
@@ -94,7 +94,7 @@ table(caixeta$especie)
 #A fun√ß√£o table() tamb√©m pode contar por esp√©cie em cada local, depois por local
 #em cada esp√©cie). Como?
 table(caixeta$especie, caixeta$local)
-#tudo que tiver dentro do parÍntese, ele vai entender que È um vetor que vai jogar pra dentro de um objeto
+#tudo que tiver dentro do par?ntese, ele vai entender que ? um vetor que vai jogar pra dentro de um objeto
 #crie um objeto chamado pequenas que contenha todas as √°rvores com altura (h)
 #menor que um metro.(Os dados no arquivo est√£o em cent√≠metros)
 pequenas = caixeta[caixeta$h < 100, ]
@@ -107,7 +107,7 @@ medias = caixeta[caixeta$h >= 100 & caixeta$h <= 300,]
 #agora em uma linha de comando, crie um objeto que contenha a quantidade de
 #√°rvores pequenas, m√©dias e grandes, separadamente
 todas = c(length(pequenas), length(media), length(grandes))
-#mostra um comprimento de um vetor de data.frame ou matriz (ambos s„o conjuntos de vetores), se eu n„o especificar ele ir· me mostrar o n˙mero de vetores dentro do data.frame ou matriz
+#mostra um comprimento de um vetor de data.frame ou matriz (ambos s?o conjuntos de vetores), se eu n?o especificar ele ir? me mostrar o n?mero de vetores dentro do data.frame ou matriz
 todas = c(length(pequenas$local), length(medias$local), length(grandes$local))
 #Crie um objeto chamado obj somente com os individuos de "Alchornea
 #triplinervia" Em quantas localidades esta esp√©cie ocorre? Qual comando para
@@ -115,15 +115,15 @@ todas = c(length(pequenas$local), length(medias$local), length(grandes$local))
 obj = caixeta[caixeta$especie == "Alchornea triplinervia",]
 
 #podemos remover dados de um dataframe, usando o sinal de menos
-###### which() d· os endereÁos de tudo que coumprir a condiÁ„o que tem depois dele
-caixeta.sem.tabebuia = caixeta[ - which(caixeta$especie == "Tabebuia cassinoides"),] #ele tirou tudo que tem essa espÈcie do data.frame
+###### which() d? os endere?os de tudo que coumprir a condi??o que tem depois dele
+caixeta.sem.tabebuia = caixeta[ - which(caixeta$especie == "Tabebuia cassinoides"),] #ele tirou tudo que tem essa esp?cie do data.frame
 unique(caixeta.sem.tabebuia$especie) # cita as coisas dentro do vetor
-sort(unique(caixeta.sem.tabebuia$especie)) # cite em ordem alfabÈtica
+sort(unique(caixeta.sem.tabebuia$especie)) # cite em ordem alfab?tica
 
 #agora crie um objeto removendo todas as "Tabebuia cassinoides" do local retiro
 #(somente do local retiro)
-#crio um vetor "caixeta.sem.retiro" e mostro uma condiÁ„o criando um vetor (caixeta$local == "retiro" & caixeta$especie == "Tabebuia cassinoides"), mas coloco o !. esse sinal vai criar um objeto que N√O ser essa condiÁ„o que eu especifiquei
-caixeta.sem.retiro = caixeta[ #indexo a condiÁ„o dentro de caixeta
+#crio um vetor "caixeta.sem.retiro" e mostro uma condi??o criando um vetor (caixeta$local == "retiro" & caixeta$especie == "Tabebuia cassinoides"), mas coloco o !. esse sinal vai criar um objeto que N?O ser essa condi??o que eu especifiquei
+caixeta.sem.retiro = caixeta[ #indexo a condi??o dentro de caixeta
                             !( caixeta$local == "retiro" 
                               &
                               caixeta$especie == "Tabebuia cassinoides"),
@@ -154,7 +154,7 @@ d = c(191.3721, 216.1671, 165.4380, 196.2730, 172.6565, 178.2955,
                  209.9109, 210.9228
 )
 comNA = data.frame (id, c(a,b,c,d))
-semNA = comNA[!is.na(comNA$c.a..b..c..d.),] #is.na busca todos os NA da coluna "c.a..b..c..d." do dataframe comNA, o ! me d· tudo oq N√O for a condiÁ„o que eu indiquei
+semNA = comNA[!is.na(comNA$c.a..b..c..d.),] #is.na busca todos os NA da coluna "c.a..b..c..d." do dataframe comNA, o ! me d? tudo oq N?O for a condi??o que eu indiquei
 semNA2 = na.omit(comNA) #faz a mesma coisa do de cima
 
 #Abaixo temos dados de tamanho de mand√≠bula de chacal dourado. Crie um dataframe
@@ -178,7 +178,7 @@ machos.grandes2 = tabela$machos[machos > media.machas] #usando dataframe
 
 ###if
 teste.de.normalidade = shapiro.test(dragoes$y)
-if (teste.de.normalidade$p.value >= 0.05) { #o if olha se a condiÁ„o dentro do () È verdadeira,
+if (teste.de.normalidade$p.value >= 0.05) { #o if olha se a condi??o dentro do () ? verdadeira,
   #se for verdadeira, ele executa oq tiver entro {}
   fit = lm(dragoes$y ~ dragoes$x)
   summary(fit)
@@ -187,18 +187,18 @@ if (teste.de.normalidade$p.value >= 0.05) { #o if olha se a condiÁ„o dentro do (
 #agora crie um c√≥digo  como acima, mas que diga "par" se for par e "impar" se
 #for impar. Dica: leia sobre as fun√ß√µes else e ifelse
 if(8 %% 2 == 0){message("par")}
-if(9 %% 2 != 0){message("Ìmpar")}
+if(9 %% 2 != 0){message("?mpar")}
 
 if(8 %% 2 == 0) {
   message("par")
 } else {                    
-  message ("Ìmpar")
+  message ("?mpar")
 }
 
 if(dado seguir uma normal)
-{teste paramÈtrico}
-else {teste n„o paramÈtrico} #se o dado seguir uma normal, realiza teste paramÈtrico, 
-                            #se n„o for, realiza o n„o paramÈtrico
+{teste param?trico}
+else {teste n?o param?trico} #se o dado seguir uma normal, realiza teste param?trico, 
+                            #se n?o for, realiza o n?o param?trico
 ifelse #quando for pouca coisa
 
 #crie um ciclo (for) que mostre o console todos os inteiros de 1 at√© 10, um por
