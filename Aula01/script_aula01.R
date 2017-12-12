@@ -24,7 +24,7 @@
 
 
 
-1 + 1 #soma os valores
+1 + 1 #soma os valores. soma igual a 2
 
 
 
@@ -192,15 +192,15 @@ rm()
 
 objetol #nao existe esse objeto
 
-objeto .texto #existe espaÁo entre os nomes, ele nao entende
+objeto .texto #existe espa?o entre os nomes, ele nao entende
 
 Objeto
 
 source("chuchu.R") #nao esta em meu diretorio
 
-source(chuchu.R) #nao È um objeto
+source(chuchu.R) #nao ? um objeto
 
-setwd("C:/CavernaDoDrag√£o") #n„o tem essa pasta
+setwd("C:/CavernaDoDrag√£o") #n?o tem essa pasta
 
 getwd #nao tem parentese
 
