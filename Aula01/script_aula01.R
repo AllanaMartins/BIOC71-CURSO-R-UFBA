@@ -24,7 +24,7 @@
 
 
 
-1 + 1 #soma os valores. soma igual a 2
+1 + 1 #soma os valores
 
 
 

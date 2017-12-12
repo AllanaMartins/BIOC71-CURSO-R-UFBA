@@ -9,7 +9,7 @@
 
 #####Trabalhando com dados#####
 # o que é um dataframe? Qual a diferneça entre um dataframe e um list?
-#uma lista ? um objeto composto por vetores que podem ter tamanhos e classes diferentes, um data frame ? um tipo especial de list onde os vetores possuem o mesmo tamanho, mas podem ter classes diferentes 
+#uma lista ? um objeto composto por vetores que podem ter tamanhos e classes diferentes, um data frame ? um tipo especial de list onde os vetores possuem o mesmo tamanho, mas podem ter classes diferentes  
 
 # o que as funções abaixo fazem? O que elas retornam?
 is.vector(aves.c$urubu) #confirma que a linha urubu dentro do arquivo aves.c ? um vetor
